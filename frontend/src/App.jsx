@@ -6,7 +6,8 @@ import {
 } from 'react-icons/lu'
 
 function App() {
-  const [cities, setCities] = useState(["Monreale", "Terrasini", "Leeds"])
+  // Replaced local default cities with general metropolitan default cities
+  const [cities, setCities] = useState(["Rome", "London", "Tokyo"])
   const [weatherData, setWeatherData] = useState({})
   const [newCity, setNewCity] = useState("")
   const [selectedCity, setSelectedCity] = useState(null)
@@ -149,7 +150,6 @@ function App() {
     <div style={{ padding: '40px 20px', fontFamily: '"Poppins", sans-serif', minHeight: '100vh', background: theme.globalBg, color: theme.text, transition: 'background 0.3s ease' }}>
       
       <style>{`
-        /* Overrides Vite's default boxed layout restrictions */
         html, body, #root {
           margin: 0;
           padding: 0;
@@ -238,7 +238,6 @@ function App() {
           </div>
         </div>
 
-        {/* CUSTOM GITHUB FOOTER */}
         <footer style={{ textAlign: 'center', marginTop: '60px', paddingBottom: '20px', color: theme.text, fontSize: '0.9rem' }}>
           &copy; {new Date().getFullYear()} Mario. All rights reserved. | Built with React & FastAPI <br/>
           <a 
@@ -253,7 +252,6 @@ function App() {
 
       </div>
 
-      {/* FULLSCREEN MODAL */}
       {selectedCity && weatherData[selectedCity] && (
         <div className="smooth-scroll" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: theme.modalBg, zIndex: 1000, overflowY: 'auto', padding: '60px 40px', boxSizing: 'border-box' }}>
           
